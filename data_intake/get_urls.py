@@ -2,7 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_news_urls(url,news_data):
-    # Send a GET request to the website
+    """
+    Function to scrape the news articles from the provided URL
+    :param url: URL of the webpage to scrape
+    :param news_data: List to store the extracted news data
+    """
     response = requests.get(url)
     if response.status_code != 200:
         print(f"Failed to fetch the webpage. Status code: {response.status_code}")
@@ -11,6 +15,7 @@ def get_news_urls(url,news_data):
     # Parse the webpage content using BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
     
+    # The elements containing the news articles have the class 'clearfix'
     # Find all news articles based on the provided structure
     news_items = soup.find_all('li', class_='clearfix')
 
@@ -27,11 +32,19 @@ def get_news_urls(url,news_data):
 
     return news_data
 
-def getall_links(base_url,n=1):
+def getall_links(base_url,no_of_days=1):
+    """
+    Function to get all the news URLs from the provided URL for the specified number of days by scraping multiple pages
+    here we are scraping 3 pages per day(2 pages of news and 1 page of margin)
+    :param base_url: URL of the webpage wich have all the articles to scrape
+    :param no_of_days: Number of days to scrape the news articles
+    """
+    # List to store the extracted news data
     news_data = []
     
     # Loop through the pages
-    for i in range(n*5):  # Assuming there are 4 pages to scrape
+    for i in range(no_of_days*3):   # 3 pages per day
+        
         # Generate the URL by replacing "page-1" with "page-{i+1}"
         url = base_url.replace("page-1", f"page-{i+1}")
         
