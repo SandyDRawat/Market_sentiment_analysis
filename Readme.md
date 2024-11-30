@@ -38,7 +38,7 @@ Install the required Python libraries:
 pip install -r requirements.txt
 ```
 
-### 3. COnfigure API Keys
+### 3. Configure API Keys
 Store your API keys(Hugging Face) in .env file:
 
 ```plaintext
