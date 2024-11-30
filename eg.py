@@ -1,14 +1,11 @@
-from data_intake.get_urls import getall_links
-from data_intake.web_crawler import getall_data
+from data_preprocess.add_sentiment import add_sentiment_to_data
 import pandas as pd
+from data_preprocess.add_sentiment import add_sentiment_to_data
 
-# URL for the news articles
-url = "https://www.livemint.com/latest-news/page-1"
-urls = getall_links(url)
-
-urls = [item['link'] for item in urls]
-#print(urls)
-
-# Scrape the news articles
-news_data = getall_data(urls)
-print(news_data[5])
+from data_intake.data_intake import get_data
+print("fgjghkjjnntynynynynynynynh",type(pd.read_csv('D:/projects/Market sentiment analysis/articles_with_summary.csv')))
+data = get_data(1)
+for i in range(len(data)):
+    data['content'][i] = str(data['content'][i])
+data = add_sentiment_to_data(data)
+print(data.head(5))
