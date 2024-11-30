@@ -1,0 +1,10 @@
+streamlit==1.26.0
+pandas==1.5.3
+transformers==4.33.2
+torch==2.0.1
+scipy==1.11.2
+langchain==0.0.324
+python-dotenv==1.0.0
+beautifulsoup4==4.13.0
+requests==2.31.0
+langchain-community
