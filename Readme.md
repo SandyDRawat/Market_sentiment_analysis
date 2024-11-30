@@ -30,12 +30,55 @@ This project analyzes market sentiment by scraping news articles from [Moneycont
 ```bash
 git clone https://github.com/yourusername/market-sentiment-analysis.git
 cd market-sentiment-analysis
-
----
+```
 ### 2. Install Dependencies
 Install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
+```
 
+### 3. COnfigure API Keys
+Store your API keys(Hugging Face) in .env file:
+
+```plaintext
+HUGGINGFACE_API_KEY=your_huggingface_api_key
+```
+---
+
+## Usage
+
+### 1. Run the streamlit App
+Launch the streamlit interface to analyze sentiment interactively:
+
+```bash
+streamlit run app.py
+```
+### 2. Use the ```get_data``` Function
+To scrape, summarize, and analyze sentiment programmatically:
+
+```python
+from your_project_module import get_data
+
+# Fetch and process articles for the last 3 days
+data = get_data(no_of_days=3, download_csv=True)
+```
+---
+
+### Project Structure
+```plaintext
+.
+├── data_intake/
+│   ├── get_urls.py          # Fetches article URLs
+│   ├── web_crawler.py       # Scrapes article content
+├── data_preprocess/
+│   ├── add_summary.py       # Adds summaries to articles
+│   ├── add_sentiment.py     # Adds sentiment analysis
+├── app.py                   # Streamlit application
+├── main.py                  # Main script for fetching and processing data
+├── requirements.txt         # List of dependencies
+├── README.md                # Project documentation
+└── .env                     # Environment variables (not tracked in Git)
+
+```
 ---
