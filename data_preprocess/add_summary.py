@@ -64,4 +64,4 @@ if __name__ == '__main__':
     data = pd.read_csv('D:/projects/Market sentiment analysis/articles.csv')
     data_with_summary = add_summary_to_data(data)
     print(data_with_summary)
-    data_with_summary.to_csv('D:/projects/Market sentiment analysis/articles_with_summary.csv', index=False)
+    data_with_summary.to_csv('D:/projects/Market sentiment analysis/saved_data/articles_with_summary.csv', index=False)

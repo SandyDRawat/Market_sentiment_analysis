@@ -83,4 +83,4 @@ if __name__ == '__main__':
 
     data["Score"] = data["positive"] - data["negative"]
     print(data.head(5))
-    data.to_csv('D:/projects/Market sentiment analysis/articles_with_sentiment.csv', index=False)
+    data.to_csv('D:/projects/Market sentiment analysis/saved_data/articles_with_sentiment.csv', index=False)
