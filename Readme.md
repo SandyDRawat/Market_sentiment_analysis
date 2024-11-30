@@ -82,3 +82,32 @@ data = get_data(no_of_days=3, download_csv=True)
 
 ```
 ---
+## Dependencies
+
+- Python 3.8 or later
+- Libraries:
+  - `streamlit`
+  - `pandas`
+  - `transformers`
+  - `python-dotenv`
+  - `langchain`
+  - `torch`
+  - `scipy`
+
+Install all dependencies using:
+```bash
+pip install -r requirements.txt
+```
+---
+## Example Output
+
+### Sample DataFrame
+
+| Title                          | Content               | Summary             | Positive | Negative | Neutral | Predicted Label | Score |
+|--------------------------------|-----------------------|---------------------|----------|----------|---------|-----------------|-------|
+| Market gains momentum today... | Full article content  | Summarized content  | 0.65     | 0.20     | 0.15    | Positive        | 0.45  |
+
+### Saved CSV File
+Processed data is saved to: `D:/projects/Market sentiment analysis/saved_data/`
+
+---
