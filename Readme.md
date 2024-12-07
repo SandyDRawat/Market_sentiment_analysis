@@ -28,8 +28,7 @@ This project analyzes market sentiment by scraping news articles from [Moneycont
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/market-sentiment-analysis.git
-cd market-sentiment-analysis
+git clone https://github.com/SandyDRawat/Market_sentiment_analysis
 ```
 ### 2. Install Dependencies
 Install the required Python libraries:
